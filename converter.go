@@ -217,6 +217,14 @@ func (m *Convert) ConvertHTMLDatetoUnix(date string) (int64, error) {
 
 }
 
+func (m *Convert) StringToTime(obj string) time.Time {
+	r, _ := time.Parse("2006-01-02", obj)
+	return r
+}
+func (m *Convert) TimeToStringData(obj time.Time) string {
+	y,mm,d := obj.Date()
+	return fmt.Sprintf("%s-%s-%s",y,mm,d)
+}
 //конвертация UNIX временного предсталения в строку
 func (m *Convert) ConvertUnixTimeToString(unixtime int64) string {
 	return time.Unix(unixtime, 0).String()
