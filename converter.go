@@ -223,7 +223,7 @@ func (m *Convert) StringToTime(obj string) time.Time {
 }
 func (m *Convert) TimeToStringData(obj time.Time) string {
 	y,mm,d := obj.Date()
-	return fmt.Sprintf("%s-%s-%s",y,mm,d)
+	return fmt.Sprintf("%d-%d-%d",y,mm,d)
 }
 //конвертация UNIX временного предсталения в строку
 func (m *Convert) ConvertUnixTimeToString(unixtime int64) string {
